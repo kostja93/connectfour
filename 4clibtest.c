@@ -32,10 +32,11 @@ int main (int argc, const char * argv[]) {
     init_4clib();
     print_board();
     make_move(1, PLAYER_1);
+    make_move(0, PLAYER_1);
+    make_move(1, PLAYER_1);
+    make_move(1, PLAYER_1);
     make_move(1, PLAYER_1);
     make_move(1, PLAYER_2);
-    make_move(1, PLAYER_2);
-    make_move(1, PLAYER_1);
     make_move(1, PLAYER_2);
     make_move(0, PLAYER_1);
     make_move(2, PLAYER_1);
