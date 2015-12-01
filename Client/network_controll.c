@@ -3,8 +3,11 @@
 //
 
 #include "network_controll.h"
+#include "../Logger.h"
 
 void initialConnectionToPeer(struct peer_info *peerInfo, int port, int read, int write) {
+    logger_log("Opening Ports");
+
     read  = initRecvSocket(port);
     write = initSendSocket(peerInfo);
 

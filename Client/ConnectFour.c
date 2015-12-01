@@ -6,6 +6,9 @@
 #include "network_controll.h"
 #include "../4clib.h"
 #include "../connect_four_types.h"
+#include "../Logger.h"
+
+#define DEBUG_CF 1
 
 struct peer_info gamePeerInfo;
 int port, peer_socket;
@@ -15,6 +18,7 @@ void extractPeerInfo(int argc, char **argv);
 int connectedToPeer();
 
 int main(int argc, char **argv) {
+    init_logger();
     printf("Connect Four\n");
 
     extractPeerInfo(argc, argv);
@@ -38,7 +42,7 @@ void extractPeerInfo(int argc, char **arguments) {
     }
 
     gamePeerInfo.ip    = (__uint32_t) atoi(arguments[1]);
-    gamePeerInfo.port  = (__uint16_t) atoi(arguments[2]);
+    gamePeerInfo.port  = (__uint16_t) inet_addr(arguments[2]);
     gamePeerInfo.start = (__uint16_t) atoi(arguments[3]);
 
     port = atoi(arguments[4]);
