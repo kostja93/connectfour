@@ -18,7 +18,9 @@
 
 #include "../connect_four_types.h"
 
-void initialConnectionToPeer(struct peer_info *peerInfo, int port, int , int);
+int send_fd, recv_fd;
+
+void initialConnectionToPeer(struct peer_info *peerInfo, int port);
 int initSendSocket(struct peer_info *peerInfo);
 int initRecvSocket(int);
 

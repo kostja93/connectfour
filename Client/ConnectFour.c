@@ -18,21 +18,14 @@ void extractPeerInfo(int argc, char **argv);
 int connectedToPeer();
 
 int main(int argc, char **argv) {
-    init_logger();
     printf("Connect Four\n");
-
     extractPeerInfo(argc, argv);
-    init_4clib();
-    print_board();
-    initialConnectionToPeer(&gamePeerInfo, port, recv_fd, send_fd);
 
-    while( winner() == 0 ) {
-        //if local user turn:
-        //get move from STD_INFIlENO
-        //else
-        //get from network move information
-        print_board();
-    }
+    init_logger();
+    init_4clib();
+    initialConnectionToPeer(&gamePeerInfo, port);
+
+    print_board();
 }
 
 void extractPeerInfo(int argc, char **arguments) {
